@@ -38,7 +38,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (isJumping)
         {
-            charPos.y += 1;
+            charPos.y += 1 * Time.deltaTime;
             if (charPos.y >= 5)
             {
                isJumping = false;
