@@ -38,4 +38,13 @@ public class starSpawner : MonoBehaviour
         }
         
     }
+
+
+
+    public void starAmoung()
+    {
+
+    }
+
+
 }

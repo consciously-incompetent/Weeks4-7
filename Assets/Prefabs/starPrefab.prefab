@@ -97,4 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc04e9bff50d596478fc7d1f02e81350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starOpacity: {fileID: 989363708983700499}
+  starSR: {fileID: 989363708983700499}
+  size: 0
+  locationX: 0
+  locationY: 0
