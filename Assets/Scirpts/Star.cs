@@ -25,7 +25,7 @@ public class Star : MonoBehaviour
         starSize = Vector3.one * size;
         transform.position = starPos;
         transform.localScale = starSize;
-        limit = Random.Range(1, 8);
+        limit = Random.Range(5, 8);
 
 
 
