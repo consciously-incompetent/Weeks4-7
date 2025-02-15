@@ -9,10 +9,9 @@ public class starSpawner : MonoBehaviour
 {
 
 
-    
+    public Slider timer;
     public float starCount = 0;
     public Slider slider;
-    float t;
     bool timerOnOff = false;
 
     public GameObject star;
@@ -28,7 +27,13 @@ public class starSpawner : MonoBehaviour
 
         if (timerOnOff)
         {
-            t += Time.deltaTime;
+            timer.value  += Time.deltaTime;
+            
+            if(timer.value == 8)
+            {
+                timerOnOff = false;
+                timer.value = 0;
+            }
         }
 
 
@@ -41,14 +46,17 @@ public class starSpawner : MonoBehaviour
 
      public void Spawn()
     {
-        timerOnOff = true;
-        for (int i = 0; i < starCount; i++)
+        if (!timerOnOff)
         {
-            GameObject newStar = Instantiate(star);
-            newStar.GetComponent<Star>().size = Random.Range(0.1f, 0.5f);
-            newStar.GetComponent<Star>().locationX = Random.Range(-9, 9);
-            newStar.GetComponent<Star>().locationY = Random.Range(-4.5f, 4.5f);
-            
+            timerOnOff = true;
+            for (int i = 0; i < starCount; i++)
+            {
+                GameObject newStar = Instantiate(star);
+                newStar.GetComponent<Star>().size = Random.Range(0.1f, 0.5f);
+                newStar.GetComponent<Star>().locationX = Random.Range(-9, 9);
+                newStar.GetComponent<Star>().locationY = Random.Range(-4.5f, 4.5f);
+
+            }
         }
         
     }

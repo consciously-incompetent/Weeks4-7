@@ -25,7 +25,7 @@ public class Star : MonoBehaviour
         starSize = Vector3.one * size;
         transform.position = starPos;
         transform.localScale = starSize;
-        limit = Random.Range(5, 8);
+        limit = Random.Range(6.1f,7);
 
 
 
@@ -42,7 +42,7 @@ public class Star : MonoBehaviour
     void Update()
     {
         t += 1 *Time.deltaTime;
-        starSR.color = new Color(1, 1, 0,1- t*0.3f);
+        starSR.color = new Color(1, 1, 0,1- t*0.15f);
         //above code was provided by https://stuartspixelgames.com/2019/02/19/how-to-change-sprites-colour-or-transparency-unity-c/ 
         // it has been changed slighltly but this is how i got a hold of the transparency of my sprite
         if (t > limit)
