@@ -8,23 +8,24 @@ using UnityEngine.UI;
 public class starSpawner : MonoBehaviour
 {
 
-
+    //variables being made 
     public Slider timer;
     public float starCount = 0;
     public Slider slider;
     bool timerOnOff = false;
-
+    //qhere the prefab will go
     public GameObject star;
     // Start is called before the first frame update
     void Start()
     {
+        //this was for testing
         //Spawn();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //increses the value of the timer until it hits 8 (which is the length of the stars life)
         if (timerOnOff)
         {
             timer.value  += Time.deltaTime;
@@ -43,7 +44,8 @@ public class starSpawner : MonoBehaviour
 
 
 
-
+    //spawns a number of the star prefabs based on star count which is increase by a slider
+    //the stars are then given random positions and sizes 
      public void Spawn()
     {
         if (!timerOnOff)
@@ -62,7 +64,7 @@ public class starSpawner : MonoBehaviour
     }
 
 
-
+    //when the slider is changed that new value is given to starcount
     public void starAmount()
     {
         starCount = slider.value;
